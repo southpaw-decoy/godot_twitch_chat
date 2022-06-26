@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4ooy73eqkib1"]
+
+[ext_resource type="Script" path="res://app/network/twitch_connection.gd" id="1_ypgl0"]
+
+[node name="twitch_connection" type="Node"]
+script = ExtResource( "1_ypgl0" )

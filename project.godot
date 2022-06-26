@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node",
+"class": &"SenderData",
+"language": &"GDScript",
+"path": "res://app/network/util/sender_data.gd"
+}, {
+"base": "Node",
+"class": &"TwitchConnector",
+"language": &"GDScript",
+"path": "res://app/network/twitch_connection.gd"
+}]
+_global_script_class_icons={
+"SenderData": "",
+"TwitchConnector": ""
+}
+
+[application]
+
+config/name="Godot Twitch Chat"
+run/main_scene="res://app/twitch/twitch_test.tscn"
+config/features=PackedStringArray("4.0", "Vulkan Mobile")
+config/icon="res://icon.png"
+
+[rendering]
+
+vulkan/rendering/back_end=1
