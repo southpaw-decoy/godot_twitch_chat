@@ -9,6 +9,16 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "RefCounted",
+"class": &"CommandData",
+"language": &"GDScript",
+"path": "res://app/network/util/cmd_data.gd"
+}, {
+"base": "RefCounted",
+"class": &"CommandInfo",
+"language": &"GDScript",
+"path": "res://app/network/util/cmd_info.gd"
+}, {
 "base": "Node",
 "class": &"SenderData",
 "language": &"GDScript",
@@ -20,6 +30,8 @@ _global_script_classes=[{
 "path": "res://app/network/twitch_connection.gd"
 }]
 _global_script_class_icons={
+"CommandData": "",
+"CommandInfo": "",
 "SenderData": "",
 "TwitchConnector": ""
 }
@@ -27,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot Twitch Chat"
-run/main_scene="res://app/twitch/twitch_test.tscn"
+run/main_scene="res://app/game_manager.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 config/icon="res://icon.png"
 

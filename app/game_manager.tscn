@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck0ada7ui4ig8"]
+
+[ext_resource type="Script" path="res://app/game_manager.gd" id="1_se31t"]
+[ext_resource type="PackedScene" uid="uid://c4ooy73eqkib1" path="res://app/network/twitch_connection.tscn" id="2_vws2x"]
+[ext_resource type="PackedScene" uid="uid://dpakkucfg2f0n" path="res://app/ui/chat_viewer/chat_viewer.tscn" id="3_dtjcc"]
+
+[node name="game_manager" type="Node"]
+script = ExtResource( "1_se31t" )
+
+[node name="twitch_connection" parent="." instance=ExtResource( "2_vws2x" )]
+
+[node name="chat_viewer" parent="." instance=ExtResource( "3_dtjcc" )]

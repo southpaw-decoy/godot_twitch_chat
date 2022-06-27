@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpakkucfg2f0n"]
+
+[ext_resource type="Script" path="res://app/ui/chat_viewer/chat_viewer.gd" id="1_8xq8p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipmfn"]
+bg_color = Color(0.435294, 0.4, 0.6, 1)
+
+[node name="chat_viewer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( "1_8xq8p" )
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VFlowContainer"]
+clip_contents = false
+minimum_size = Vector2(300, 300)
+offset_right = 300.0
+offset_bottom = 300.0
+focus_mode = 2
+theme_override_styles/normal = SubResource( "StyleBoxFlat_ipmfn" )
+bbcode_enabled = true
+scroll_following = true
+selection_enabled = true
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VFlowContainer"]
+minimum_size = Vector2(500, 300)
+offset_left = 304.0
+offset_right = 804.0
+offset_bottom = 300.0
+
+[node name="VFlowContainer" type="VFlowContainer" parent="VFlowContainer/HFlowContainer"]
+offset_right = 385.0
+offset_bottom = 31.0
+
+[node name="channel" type="Label" parent="VFlowContainer/HFlowContainer/VFlowContainer"]
+offset_right = 115.0
+offset_bottom = 26.0
+text = "channel to join"
+
+[node name="channel_te" type="TextEdit" parent="VFlowContainer/HFlowContainer/VFlowContainer"]
+minimum_size = Vector2(200, 30)
+offset_left = 119.0
+offset_right = 319.0
+offset_bottom = 30.0
+text = "southpaw_decoy"
+placeholder_text = "channel name"
+
+[node name="channel_button" type="Button" parent="VFlowContainer/HFlowContainer/VFlowContainer"]
+offset_left = 323.0
+offset_right = 385.0
+offset_bottom = 31.0
+text = "submit"
+
+[node name="VFlowContainer2" type="VFlowContainer" parent="VFlowContainer/HFlowContainer"]
+offset_top = 35.0
+offset_right = 382.0
+offset_bottom = 66.0
+
+[node name="add_command_label" type="Label" parent="VFlowContainer/HFlowContainer/VFlowContainer2"]
+offset_right = 112.0
+offset_bottom = 26.0
+text = "add command"
+
+[node name="add_command_te" type="TextEdit" parent="VFlowContainer/HFlowContainer/VFlowContainer2"]
+minimum_size = Vector2(200, 30)
+offset_left = 116.0
+offset_right = 316.0
+offset_bottom = 30.0
+text = "hi"
+
+[node name="add_command_button" type="Button" parent="VFlowContainer/HFlowContainer/VFlowContainer2"]
+offset_left = 320.0
+offset_right = 382.0
+offset_bottom = 31.0
+text = "submit"
+
+[node name="VFlowContainer3" type="VFlowContainer" parent="VFlowContainer/HFlowContainer"]
+offset_top = 70.0
+offset_right = 411.0
+offset_bottom = 101.0
+
+[node name="remove_command_label" type="Label" parent="VFlowContainer/HFlowContainer/VFlowContainer3"]
+offset_right = 141.0
+offset_bottom = 26.0
+text = "remove command"
+
+[node name="remove_command_te" type="TextEdit" parent="VFlowContainer/HFlowContainer/VFlowContainer3"]
+minimum_size = Vector2(200, 30)
+offset_left = 145.0
+offset_right = 345.0
+offset_bottom = 30.0
+text = "hi"
+
+[node name="remove_command_button" type="Button" parent="VFlowContainer/HFlowContainer/VFlowContainer3"]
+offset_left = 349.0
+offset_right = 411.0
+offset_bottom = 31.0
+text = "submit"
+
+[connection signal="pressed" from="VFlowContainer/HFlowContainer/VFlowContainer/channel_button" to="." method="_on_channel_button_pressed"]
+[connection signal="pressed" from="VFlowContainer/HFlowContainer/VFlowContainer2/add_command_button" to="." method="_on_add_command_button_pressed"]
+[connection signal="pressed" from="VFlowContainer/HFlowContainer/VFlowContainer3/remove_command_button" to="." method="_on_remove_command_button_pressed"]

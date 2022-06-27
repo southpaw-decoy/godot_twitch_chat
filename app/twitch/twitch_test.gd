@@ -6,7 +6,7 @@ extends TwitchConnector
 func _ready():
 	super._ready()
 	print("ready")
-	connect_to_twitch_by_channel_name(twitch_channel_name)
+#	connect_to_twitch_by_channel_name(twitch_channel_name)
 	pass # Replace with function body.
 
 
